@@ -49,6 +49,8 @@ interface Driver {
 
     fun longPress(point: Point)
 
+    fun longPressAndDropTo(start: Point, end: Point)
+
     fun pressKey(code: KeyCode)
 
     fun contentDescriptor(): TreeNode

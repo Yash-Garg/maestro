@@ -89,6 +89,19 @@ data class SwipeCommand(
     }
 }
 
+data class LongPressAndDropCommand(
+    val start: Point,
+    val end: Point
+) : Command {
+    override fun description(): String {
+        return "Long press and drop from (${start.x}, ${start.y}) to (${end.x}, ${end.y})"
+    }
+
+    override fun evaluateScripts(jsEngine: JsEngine): Command {
+        return copy()
+    }
+}
+
 /**
  * @param visibilityPercentage 0-1 Visibility within viewport bounds. 0 not within viewport and 1 fully visible within viewport.
  */

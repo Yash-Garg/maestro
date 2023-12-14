@@ -74,6 +74,7 @@ data class YamlFluentCommand(
     val startRecording: YamlStartRecording? = null,
     val stopRecording: YamlStopRecording? = null,
     val addMedia: YamlAddMedia? = null,
+    val longPressAndDropTo: YamlLongPressAndDropCommand? = null,
 ) {
 
     @SuppressWarnings("ComplexMethod")
@@ -665,6 +666,10 @@ data class YamlFluentCommand(
 
                 "stopRecording" -> YamlFluentCommand(
                     stopRecording = YamlStopRecording()
+                )
+
+                "longPressAndDropTo" -> YamlFluentCommand(
+                    longPressAndDropTo = YamlLongPressAndDropCommand()
                 )
 
                 else -> throw SyntaxError("Invalid command: \"$stringCommand\"")
